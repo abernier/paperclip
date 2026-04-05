@@ -1,9 +1,9 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "installCommand": "pnpm install",
-  "buildCommand": "pnpm --filter @paperclipai/ui... build && mkdir -p dist && cp -r ui/dist/* dist/",
-  "outputDirectory": "dist",
+  "installCommand": "pnpm install --no-frozen-lockfile",
+  "buildCommand": "cd ui && npx vite build",
+  "outputDirectory": "ui/dist",
   "rewrites": [
     { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
